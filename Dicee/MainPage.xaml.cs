@@ -127,10 +127,10 @@ namespace Dicee
                 MessageDialog messageDialog2 = new MessageDialog("Congratulations! New score record!");
                 await messageDialog2.ShowAsync();
             }
-            this.resetTheGame();
+            this.ResetTheGame();
         }
 
-        private void resetTheGame()
+        private void ResetTheGame()
         {
             turnScore = 0;
             totalScore = 0;

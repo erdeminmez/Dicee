@@ -22,9 +22,53 @@ namespace Dicee
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        int turnScore;
+        int totalScore;
+        int numOfRolls;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            turnScore = 0;
+            totalScore = 0;
+            numOfRolls = 0;
+        }
+
+        private void RollButton_Click(object sender, RoutedEventArgs e)
+        {
+            Random r = new Random();
+            int firstRoll = r.Next(1, 7);
+            int secondRoll = r.Next(1, 7);
+
+            FirstDice.Text = $"{firstRoll}";
+            SecondDice.Text = $"{secondRoll}";
+
+            this.CalculateTurnScore(firstRoll, secondRoll);
+            this.UpdateTotalScore();
+            numOfRolls += 1;
+
+            TurnScore.Text = $"Turn Score is {turnScore} point(s)";
+            OverallScore.Text = $"Overall Score is {totalScore} point(s)";
+            RolledTimes.Text = $"Dice rolled {numOfRolls} times";
+        }
+
+        private void CalculateTurnScore(int firstRoll, int secondRoll)
+        {
+            if (firstRoll == secondRoll)
+            {
+                if (firstRoll == 6)
+                    turnScore = 100;
+                else
+                    turnScore = 10;
+            }
+            else
+                turnScore = 0;
+        }
+
+        private void UpdateTotalScore()
+        {
+            totalScore += turnScore;
         }
     }
 }

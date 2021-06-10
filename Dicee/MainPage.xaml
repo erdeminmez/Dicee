@@ -8,7 +8,35 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="Green">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock x:Name="Header" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="DICEE GAME" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="54" Foreground="White"></TextBlock>
+
+        <Border Grid.Row="1" Grid.Column="0" Height="150" Width="150" CornerRadius="15" Background="White">
+            <TextBlock x:Name="FirstDice" FontSize="64" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Text="4"></TextBlock>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Height="150" Width="150" CornerRadius="15" Background="White">
+            <TextBlock x:Name="SecondDice" FontSize="64" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Text="2"></TextBlock>
+        </Border>
+
+        <Button x:Name="RollButton" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Roll" Foreground="White" FontSize="24" Width="200"></Button>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="ScoreBoard" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="White" Text="Turn Score is 0 point(s)"/>
+            <TextBlock x:Name="ScoreBoard2" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="White" Text="Overall Score is 30 point(s)"/>
+            <TextBlock x:Name="ScoreBoard3" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="White" Text="Dice rolled 3 times"/>
+        </StackPanel>
     </Grid>
 </Page>
